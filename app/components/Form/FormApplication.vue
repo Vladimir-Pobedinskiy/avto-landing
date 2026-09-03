@@ -35,7 +35,7 @@ const schema = Yup.object().shape({
 		.matches(/^(?!.*\s{2,}).*$/, 'Не может содержать несколько пробелов между словами'),
 	email: Yup.string().required('Email обязателен для заполнения').email('Неверный формат электронной почты'),
 	comment:
-		props.formKey === 'select-atv'
+		props.formKey === 'select-atv' || props.formKey === 'organizations'
 			? Yup.string()
 					.required('Поле обязательно для заполнения')
 					.max(100, `Максимальное число символов: 100`)
@@ -78,7 +78,7 @@ const onSubmit = async (): Promise<void> => {
 				tel: form.tel,
 				name: form.name,
 				email: form.email,
-				comment: props.formKey === 'select-atv' ? form.comment : null,
+				comment: props.formKey === 'select-atv' || props.formKey === 'organizations' ? form.comment : null,
 				agree: form.agree,
 			},
 		})
@@ -183,13 +183,15 @@ const onSubmit = async (): Promise<void> => {
 
 						<Field v-slot="{ field }" name="comment">
 							<UIInput
-								v-if="formKey === 'select-atv'"
+								v-if="formKey === 'select-atv' || formKey === 'organizations'"
 								v-model:value="form.comment"
 								v-bind="field"
 								:error-value="errors.comment"
 								type="text"
 								name="comment"
-								placeholder="Задача и регион эксплуатации*"
+								:placeholder="
+									formKey === 'organizations' ? 'Компания и парк техники*' : 'Задача и регион эксплуатации*'
+								"
 								autocomplete="off"
 								:disabled="isLoading"
 							/>

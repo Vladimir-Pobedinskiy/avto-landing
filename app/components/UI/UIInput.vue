@@ -119,7 +119,7 @@ const isHiddenInputTitle = computed(() => {
 		padding: 16px 0;
 		color: variables.$color-gray-7;
 		pointer-events: all;
-		background-color: variables.$color-background;
+		background-color: transparent;
 		border-bottom: 1px solid variables.$color-accent-stroke;
 		transition:
 			border-color 0.4s ease-in-out,

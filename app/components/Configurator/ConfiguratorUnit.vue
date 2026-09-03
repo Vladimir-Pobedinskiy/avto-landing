@@ -17,8 +17,6 @@ const panelRef = ref<HTMLElement | null>(null)
 
 useGsapAnimTitle(titleRef, sectionRef)
 
-const { handleAnchorClick } = useAnchorNav()
-
 const activeIndex = ref<number>(0)
 const selectedModelId = ref<TID | null>(null)
 // Плоский список выбранных опций: id опции уникален в пределах конфигуратора.
@@ -273,14 +271,6 @@ onUnmounted(() => {
 							variant="primary"
 							:label="configuratorUnit.nextLabel"
 							@click="goNext"
-						/>
-						<UIButton
-							v-else
-							as="NuxtLink"
-							variant="primary"
-							:to="configuratorUnit.summary.link.url"
-							:label="configuratorUnit.summary.link.label"
-							@click="handleAnchorClick(configuratorUnit.summary.link.url, $event)"
 						/>
 					</div>
 				</div>

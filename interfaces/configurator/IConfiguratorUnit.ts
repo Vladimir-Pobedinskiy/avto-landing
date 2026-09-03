@@ -1,6 +1,5 @@
 import type { TID } from '~~/interfaces/TID'
 import type { IImg } from '~~/interfaces/IImg'
-import type { ILink } from '~~/interfaces/ILink'
 
 export type TConfiguratorStepId = 'model' | 'exterior' | 'interior' | 'summary'
 
@@ -45,7 +44,6 @@ export interface IConfiguratorSummary {
 	optionsLabel: string
 	emptyLabel: string
 	note: string
-	link: ILink
 }
 
 export interface IConfiguratorUnit {

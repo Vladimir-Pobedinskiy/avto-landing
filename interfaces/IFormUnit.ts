@@ -1,4 +1,4 @@
-export type TFormKey = 'test-drive' | 'select-atv'
+export type TFormKey = 'test-drive' | 'select-atv' | 'organizations'
 
 export interface IFormUnit {
 	label: string
