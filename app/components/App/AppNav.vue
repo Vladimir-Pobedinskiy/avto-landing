@@ -56,19 +56,19 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__item {
-		&_row {
-			margin-right: 20px;
-
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-
 		&_column {
 			margin-bottom: 16px;
 
 			&:last-child {
 				margin-bottom: 0;
+			}
+		}
+
+		&_row {
+			margin-right: 20px;
+
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}

@@ -80,7 +80,7 @@ export default defineNuxtConfig({
 				stylelint: {
 					lintCommand: 'stylelint "**/*.{vue,css,scss}"',
 				},
-			}) as any, // TODO: убрать после обновления vite-plugin-checker (типы hotUpdate несовместимы)
+			}),
 		],
 		optimizeDeps: {
 			include: [

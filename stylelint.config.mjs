@@ -29,5 +29,6 @@ export default {
 		'color-function-notation': null, // Отключаем проверку нотации цветовых функций (rgba, hsla)
 		'selector-class-pattern': null, //отключение необходимости использования kebab-case для имен классов
 		'selector-id-pattern': null,
+		'no-descending-specificity': null, // ложные срабатывания на вложенных BEM-модификаторах (&_row / &_column)
 	},
 }

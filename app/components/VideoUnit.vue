@@ -233,13 +233,13 @@ onBeforeUnmount(() => {
 			border-color variables.$transition-duration variables.$transition-bezier,
 			color variables.$transition-duration variables.$transition-bezier;
 
+		&_text {
+			text-transform: uppercase;
+		}
+
 		&:hover {
 			border-color: rgb(0 179 60 / 60%);
 			color: variables.$color-accent;
-		}
-
-		&_text {
-			text-transform: uppercase;
 		}
 	}
 
