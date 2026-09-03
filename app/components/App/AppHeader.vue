@@ -86,27 +86,27 @@ onUnmounted(() => {
 
 .header {
 	position: fixed;
-	left: 0;
 	top: 0;
+	left: 0;
+	z-index: 997;
+	display: flex;
+	align-items: center;
 	width: 100%;
 	min-height: 62px;
 	padding: 8px 0;
-	display: flex;
-	align-items: center;
+	color: variables.$color-white;
 
 	// Полупрозрачное стекло: под шапкой должно просвечивать видео первого экрана.
 	background-color: rgb(10 12 16 / 72%);
-	backdrop-filter: variables.$glass-blur;
 	border-bottom: 1px solid transparent;
-	color: variables.$color-white;
-	z-index: 997;
+	backdrop-filter: variables.$glass-blur;
 	transition:
 		background-color 0.4s variables.$transition-bezier,
 		border-color 0.4s variables.$transition-bezier;
 
 	@media (min-width: variables.$desktop) {
-		padding: 14px 0;
 		min-height: 92px;
+		padding: 14px 0;
 	}
 
 	&.scrolled {
@@ -116,25 +116,25 @@ onUnmounted(() => {
 
 	&__inner {
 		display: flex;
+		gap: 16px;
 		align-items: center;
 		justify-content: space-between;
-		gap: 16px;
 	}
 
 	&__left-side {
 		display: flex;
-		align-items: center;
 		gap: 24px;
+		align-items: center;
 	}
 
 	&__address {
 		display: none;
 
 		@media (min-width: variables.$desktop-big) {
-			padding-left: 24px;
 			display: flex;
 			flex-direction: column;
 			gap: 2px;
+			padding-left: 24px;
 			border-left: 1px solid variables.$glass-border;
 		}
 	}
@@ -151,19 +151,19 @@ onUnmounted(() => {
 
 	&__right-side {
 		display: flex;
-		align-items: center;
 		gap: 12px;
+		align-items: center;
 	}
 
 	&__tel-icon {
-		width: 42px;
-		height: 42px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		width: 42px;
+		height: 42px;
+		color: variables.$color-white;
 		border: 1px solid variables.$glass-border;
 		border-radius: 6px;
-		color: variables.$color-white;
 
 		.nuxt-icon {
 			width: 20px;

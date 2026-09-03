@@ -45,9 +45,9 @@ defineProps<{
 		position: relative;
 		aspect-ratio: 3 / 4;
 		overflow: hidden;
+		background-color: variables.$color-surface;
 		border: 1px solid variables.$glass-border;
 		border-radius: 16px;
-		background-color: variables.$color-surface;
 	}
 
 	&__img {
@@ -59,48 +59,48 @@ defineProps<{
 	&__scrim {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(0deg, rgb(10 12 16 / 88%) 0%, rgb(10 12 16 / 0%) 52%);
 		pointer-events: none;
+		background: linear-gradient(0deg, rgb(10 12 16 / 88%) 0%, rgb(10 12 16 / 0%) 52%);
 	}
 
 	&__tel {
 		position: absolute;
-		left: 12px;
 		right: 12px;
 		bottom: 12px;
-		padding: 10px 14px;
+		left: 12px;
 		display: flex;
+		gap: 8px;
 		align-items: center;
 		justify-content: center;
-		gap: 8px;
+		padding: 10px 14px;
+		color: variables.$color-white;
+		background-color: rgb(10 12 16 / 70%);
 		border: 1px solid variables.$glass-border;
 		border-radius: 10px;
-		background-color: rgb(10 12 16 / 70%);
 		backdrop-filter: variables.$glass-blur;
-		color: variables.$color-white;
 		transition:
 			border-color variables.$transition-duration variables.$transition-bezier,
 			color variables.$transition-duration variables.$transition-bezier;
 
 		@media (min-width: variables.$desktop) {
 			&:hover {
-				border-color: rgb(0 179 60 / 60%);
 				color: variables.$color-accent;
+				border-color: rgb(0 179 60 / 60%);
 			}
 		}
 	}
 
 	&__tel-icon {
+		flex-shrink: 0;
 		width: 16px;
 		height: 16px;
-		flex-shrink: 0;
 	}
 
 	&__body {
-		padding-top: 20px;
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
+		padding-top: 20px;
 	}
 
 	&__position {
@@ -110,9 +110,9 @@ defineProps<{
 	}
 
 	&__name {
-		color: variables.$color-white;
 		font-family: variables.$font;
 		font-weight: 700;
+		color: variables.$color-white;
 	}
 
 	&__experience {

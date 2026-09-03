@@ -132,8 +132,8 @@ onUnmounted(() => {
 	overflow: hidden;
 
 	&__swiper {
-		padding-bottom: 24px;
 		position: relative;
+		padding-bottom: 24px;
 
 		@media (min-width: variables.$desktop) {
 			padding-bottom: 0;
@@ -180,8 +180,8 @@ onUnmounted(() => {
 		position: absolute;
 		top: 50%;
 		left: 1%;
-		transform: translateY(-50%);
 		z-index: 100;
+		transform: translateY(-50%);
 
 		@media (min-width: variables.$desktop) {
 			left: 76px;
@@ -192,8 +192,8 @@ onUnmounted(() => {
 		position: absolute;
 		top: 50%;
 		right: 1%;
-		transform: translateY(-50%);
 		z-index: 100;
+		transform: translateY(-50%);
 
 		@media (min-width: variables.$desktop) {
 			right: 76px;
@@ -202,13 +202,13 @@ onUnmounted(() => {
 
 	&__button-prev.swiper-button-prev,
 	&__button-next.swiper-button-next {
-		width: 32px;
-		height: 14px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: transparent;
+		width: 32px;
+		height: 14px;
 		color: variables.$color-white;
+		background-color: transparent;
 		transition:
 			background-color 0.5s ease-in-out,
 			color 0.5s ease-in-out;
@@ -231,10 +231,10 @@ onUnmounted(() => {
 
 	&__button-prev.swiper-button-prev.swiper-button-disabled,
 	&__button-next.swiper-button-next.swiper-button-disabled {
-		background-color: transparent;
 		color: variables.$color-gray-4;
-		border: none;
 		cursor: default;
+		background-color: transparent;
+		border: none;
 		opacity: 0.7;
 		transition:
 			background-color 0.5s ease-in-out,
@@ -260,12 +260,12 @@ onUnmounted(() => {
 
 	&__pagination {
 		position: absolute;
-		left: 50%;
 		bottom: 0;
-		transform: translateX(-50%);
+		left: 50%;
+		z-index: 100;
 		display: flex;
 		align-items: center;
-		z-index: 100;
+		transform: translateX(-50%);
 
 		@media (min-width: variables.$tablet) {
 			bottom: 40px;
@@ -273,21 +273,21 @@ onUnmounted(() => {
 	}
 
 	&__pagination-bullet {
-		margin-right: 8px;
 		display: block;
 		width: 6px;
 		height: 6px;
-		border-radius: 50%;
+		margin-right: 8px;
 		background-color: transparent;
 		border: 1px solid variables.$color-white;
+		border-radius: 50%;
 		transition:
 			background-color 0.5s ease-in-out,
 			border-color 0.5s ease-in-out;
 
 		@media (min-width: variables.$desktop) {
-			margin-right: 16px;
 			width: 12px;
 			height: 12px;
+			margin-right: 16px;
 		}
 
 		&:last-child {
@@ -311,11 +311,11 @@ onUnmounted(() => {
 		position: absolute;
 		bottom: 32px;
 		left: 24px;
-		gap: 4px;
+		z-index: 10;
 		display: flex;
+		gap: 4px;
 		align-items: center;
 		justify-content: flex-start;
-		z-index: 10;
 		color: variables.$color-accent;
 
 		@media (min-width: variables.$desktop) {
@@ -325,15 +325,15 @@ onUnmounted(() => {
 	}
 
 	&__counter-inner {
-		width: fit-content;
 		display: flex;
 		align-items: center;
+		width: fit-content;
 	}
 
 	&__counter-active {
 		display: flex;
-		justify-content: flex-end;
 		flex-shrink: 0;
+		justify-content: flex-end;
 		color: variables.$color-white;
 	}
 

@@ -65,12 +65,12 @@ onUnmounted(() => {
 	background-color: variables.$color-background;
 
 	&__panel {
-		padding: 32px 20px;
 		position: relative;
+		padding: 32px 20px;
 		overflow: hidden;
+		background-color: variables.$color-surface;
 		border: 1px solid variables.$glass-border;
 		border-radius: 20px;
-		background-color: variables.$color-surface;
 
 		@media (min-width: variables.$desktop) {
 			padding: 72px 64px;
@@ -80,12 +80,12 @@ onUnmounted(() => {
 
 	&__glow {
 		position: absolute;
-		left: -120px;
 		top: -160px;
+		left: -120px;
 		width: 520px;
 		height: 420px;
-		background: radial-gradient(ellipse at center, rgb(0 179 60 / 20%) 0%, rgb(0 179 60 / 0%) 70%);
 		pointer-events: none;
+		background: radial-gradient(ellipse at center, rgb(0 179 60 / 20%) 0%, rgb(0 179 60 / 0%) 70%);
 	}
 
 	&__inner {

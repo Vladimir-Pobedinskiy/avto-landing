@@ -114,12 +114,12 @@ onUnmounted(() => {
 	}
 
 	&__card {
-		padding: 28px 24px;
 		display: flex;
 		flex-direction: column;
+		padding: 28px 24px;
+		background-color: variables.$glass-bg;
 		border: 1px solid variables.$glass-border;
 		border-radius: 16px;
-		background-color: variables.$glass-bg;
 		backdrop-filter: variables.$glass-blur;
 
 		@media (min-width: variables.$desktop) {
@@ -128,16 +128,16 @@ onUnmounted(() => {
 	}
 
 	&__card-icon {
-		margin-bottom: 24px;
-		width: 48px;
-		height: 48px;
 		display: flex;
+		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
-		flex-shrink: 0;
+		width: 48px;
+		height: 48px;
+		margin-bottom: 24px;
+		color: variables.$color-accent;
 		border: 1px solid rgb(0 179 60 / 35%);
 		border-radius: 12px;
-		color: variables.$color-accent;
 
 		.nuxt-icon {
 			width: 24px;
@@ -153,13 +153,13 @@ onUnmounted(() => {
 	}
 
 	&__value {
-		margin-bottom: 12px;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
-		color: variables.$color-white;
+		margin-bottom: 12px;
 		font-family: variables.$font;
 		font-weight: 700;
+		color: variables.$color-white;
 
 		&:last-of-type {
 			margin-bottom: 0;
@@ -167,9 +167,9 @@ onUnmounted(() => {
 	}
 
 	&__value-note {
-		color: variables.$color-gray-4;
 		font-family: variables.$font-secondary;
 		font-weight: 400;
+		color: variables.$color-gray-4;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 	}

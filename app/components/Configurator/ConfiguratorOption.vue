@@ -38,16 +38,16 @@ const emits = defineEmits<{
 @use '@/assets/scss/general/variables';
 
 .configurator-option {
-	padding: 16px 0;
-	width: 100%;
 	display: flex;
-	align-items: center;
 	gap: 12px;
-	border: 0;
-	border-bottom: 1px solid variables.$glass-border;
-	background-color: transparent;
+	align-items: center;
+	width: 100%;
+	padding: 16px 0;
 	color: variables.$color-white;
 	text-align: left;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid variables.$glass-border;
 	transition: color variables.$transition-duration variables.$transition-bezier;
 
 	&:last-child {
@@ -59,26 +59,26 @@ const emits = defineEmits<{
 			cursor: pointer;
 
 			.configurator-option__toggle {
-				border-color: rgb(0 179 60 / 60%);
 				color: variables.$color-accent;
+				border-color: rgb(0 179 60 / 60%);
 			}
 		}
 	}
 
 	&__body {
 		display: flex;
-		min-width: 0;
 		flex: 1 1 auto;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	&__name {
 		font-family: variables.$font-secondary;
 		font-size: 14px;
 		font-weight: 600;
-		letter-spacing: 0.06em;
 		text-transform: uppercase;
+		letter-spacing: 0.06em;
 
 		@media (min-width: variables.$desktop) {
 			font-size: 16px;
@@ -96,16 +96,16 @@ const emits = defineEmits<{
 	}
 
 	&__toggle {
-		width: 36px;
-		height: 36px;
 		display: flex;
+		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
-		flex-shrink: 0;
+		width: 36px;
+		height: 36px;
+		color: variables.$color-white;
+		background-color: rgb(255 255 255 / 4%);
 		border: 1px solid variables.$glass-border;
 		border-radius: 8px;
-		background-color: rgb(255 255 255 / 4%);
-		color: variables.$color-white;
 		transition:
 			background-color variables.$transition-duration variables.$transition-bezier,
 			border-color variables.$transition-duration variables.$transition-bezier,
@@ -129,8 +129,8 @@ const emits = defineEmits<{
 		}
 
 		.configurator-option__toggle {
-			border-color: transparent;
 			background-color: variables.$color-accent;
+			border-color: transparent;
 			box-shadow: 0 8px 24px -10px rgb(0 179 60 / 90%);
 
 			.nuxt-icon {
@@ -140,9 +140,9 @@ const emits = defineEmits<{
 
 		@media (min-width: variables.$desktop-small) {
 			&:hover .configurator-option__toggle {
-				border-color: transparent;
-				background-color: variables.$color-accent-soft;
 				color: variables.$color-white;
+				background-color: variables.$color-accent-soft;
+				border-color: transparent;
 			}
 		}
 	}

@@ -85,24 +85,24 @@ const { handleAnchorClick } = useAnchorNav()
 @use '@/assets/scss/general/variables';
 
 .footer {
-	padding: 48px 0 32px;
 	position: relative;
+	padding: 48px 0 32px;
 	overflow: hidden;
-	border-top: 1px solid variables.$glass-border;
-	background-color: variables.$color-surface;
 	color: variables.$color-white;
+	background-color: variables.$color-surface;
+	border-top: 1px solid variables.$glass-border;
 
 	// Тёплое свечение из-под низа — «фары в тумане», статичное, без анимации.
 	&::before {
-		content: '';
 		position: absolute;
-		left: 50%;
 		bottom: -180px;
+		left: 50%;
 		width: 900px;
 		height: 300px;
-		transform: translateX(-50%);
-		background: radial-gradient(ellipse at center, rgb(0 179 60 / 22%) 0%, rgb(0 179 60 / 0%) 70%);
 		pointer-events: none;
+		content: '';
+		background: radial-gradient(ellipse at center, rgb(0 179 60 / 22%) 0%, rgb(0 179 60 / 0%) 70%);
+		transform: translateX(-50%);
 	}
 
 	@media (min-width: variables.$desktop) {
@@ -111,10 +111,10 @@ const { handleAnchorClick } = useAnchorNav()
 
 	&__inner {
 		position: relative;
+		z-index: 1;
 		display: grid;
 		grid-template-columns: 100%;
 		gap: 40px;
-		z-index: 1;
 
 		@media (min-width: variables.$mobile-big) {
 			grid-template-columns: repeat(2, 1fr);
@@ -141,8 +141,8 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__slogan {
-		margin: 20px 0 24px;
 		max-width: 380px;
+		margin: 20px 0 24px;
 		color: variables.$color-gray-7;
 	}
 
@@ -180,10 +180,10 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__contact {
-		margin-bottom: 16px;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		margin-bottom: 16px;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -201,20 +201,20 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__bottom {
-		padding-top: 32px;
-		margin-top: 40px;
 		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
+		padding-top: 32px;
+		margin-top: 40px;
 		border-top: 1px solid variables.$glass-border;
-		z-index: 1;
 
 		@media (min-width: variables.$desktop) {
 			flex-direction: row;
+			gap: 40px;
 			align-items: flex-start;
 			justify-content: space-between;
-			gap: 40px;
 		}
 	}
 

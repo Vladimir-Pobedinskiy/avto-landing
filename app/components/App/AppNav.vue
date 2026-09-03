@@ -74,8 +74,8 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__link {
-		text-transform: uppercase;
 		color: variables.$color-white;
+		text-transform: uppercase;
 	}
 }
 </style>

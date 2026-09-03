@@ -14,8 +14,8 @@
 /* Световой блик, медленно проходящий по кузову / кромке карточки */
 @keyframes shine-sweep {
 	0% {
-		transform: translate3d(-120%, 0, 0) rotate(12deg);
 		opacity: 0;
+		transform: translate3d(-120%, 0, 0) rotate(12deg);
 	}
 
 	12% {
@@ -27,8 +27,8 @@
 	}
 
 	100% {
-		transform: translate3d(220%, 0, 0) rotate(12deg);
 		opacity: 0;
+		transform: translate3d(220%, 0, 0) rotate(12deg);
 	}
 }
 
@@ -36,13 +36,13 @@
 @keyframes glow-breathe {
 	0%,
 	100% {
-		transform: translate3d(0, 0, 0) scale(1);
 		opacity: 0.55;
+		transform: translate3d(0, 0, 0) scale(1);
 	}
 
 	50% {
-		transform: translate3d(0, -2%, 0) scale(1.06);
 		opacity: 0.85;
+		transform: translate3d(0, -2%, 0) scale(1.06);
 	}
 }
 
@@ -84,21 +84,21 @@
 @keyframes pulse-dot {
 	0%,
 	100% {
-		transform: scale(1);
 		opacity: 1;
+		transform: scale(1);
 	}
 
 	50% {
-		transform: scale(1.6);
 		opacity: 0.35;
+		transform: scale(1.6);
 	}
 }
 
 /* Скролл-подсказка внизу первого экрана */
 @keyframes scroll-hint {
 	0% {
-		transform: translate3d(0, 0, 0);
 		opacity: 0;
+		transform: translate3d(0, 0, 0);
 	}
 
 	35% {
@@ -106,8 +106,8 @@
 	}
 
 	100% {
-		transform: translate3d(0, 14px, 0);
 		opacity: 0;
+		transform: translate3d(0, 14px, 0);
 	}
 }
 

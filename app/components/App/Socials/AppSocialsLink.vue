@@ -16,17 +16,17 @@ defineProps<{
 @use '@/assets/scss/general/variables';
 
 .socials-link {
-	margin-right: 16px;
-	width: 46px;
-	height: 46px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 5px;
-	border: 1px solid variables.$color-accent-stroke;
-	background-color: transparent;
-	box-shadow: 0 0 8px 0 rgb(0 179 60 / 50%);
+	width: 46px;
+	height: 46px;
+	margin-right: 16px;
 	color: variables.$color-white;
+	background-color: transparent;
+	border: 1px solid variables.$color-accent-stroke;
+	border-radius: 5px;
+	box-shadow: 0 0 8px 0 rgb(0 179 60 / 50%);
 
 	&:last-child {
 		margin-right: 0;

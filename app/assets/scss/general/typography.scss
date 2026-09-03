@@ -152,15 +152,15 @@
 
 // Крупная «обводочная» цифра для декоративных счётчиков секций.
 .display-typo {
+	z-index: 3;
 	font-family: variables.$font;
 	font-size: 88px;
 	font-weight: 800;
 	line-height: 1;
-	-webkit-text-stroke-width: 1.5px;
-	-webkit-text-stroke-color: variables.$color-accent;
 	color: transparent;
 	text-align: center;
-	z-index: 3;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: variables.$color-accent;
 
 	@media (min-width: variables.$desktop) {
 		font-size: 160px;
@@ -168,8 +168,8 @@
 }
 
 .title {
-	text-transform: uppercase;
 	color: variables.$color-white;
+	text-transform: uppercase;
 
 	&_margin {
 		margin-bottom: 32px;
@@ -182,7 +182,7 @@
 
 // Акцентная часть заголовка — градиентная заливка по кромке «кузова».
 .accent-text {
+	color: transparent;
 	background: linear-gradient(100deg, variables.$color-accent 0%, variables.$color-accent-soft 60%, #c9ffdb 100%);
 	background-clip: text;
-	color: transparent;
 }

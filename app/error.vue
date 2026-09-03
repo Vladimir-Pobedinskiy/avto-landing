@@ -38,10 +38,10 @@ defineProps<{
 @use '@/assets/scss/general/variables';
 
 .error-page {
-	padding: 64px 0;
 	display: flex;
 	flex: 1 1 auto;
 	align-items: center;
+	padding: 64px 0;
 	background-color: variables.$color-background;
 
 	@media (min-width: variables.$desktop) {
@@ -64,8 +64,8 @@ defineProps<{
 	}
 
 	&__text {
-		margin-bottom: 32px;
 		max-width: 560px;
+		margin-bottom: 32px;
 		color: variables.$color-gray-7;
 	}
 }

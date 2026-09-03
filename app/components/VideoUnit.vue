@@ -154,8 +154,8 @@ onBeforeUnmount(() => {
 	background-color: variables.$color-background;
 
 	&__content {
-		margin-bottom: 32px;
 		max-width: 900px;
+		margin-bottom: 32px;
 
 		@media (min-width: variables.$desktop) {
 			margin-bottom: 56px;
@@ -176,9 +176,9 @@ onBeforeUnmount(() => {
 		position: relative;
 		aspect-ratio: 16 / 10;
 		overflow: hidden;
+		background-color: variables.$color-surface;
 		border: 1px solid variables.$glass-border;
 		border-radius: 16px;
-		background-color: variables.$color-surface;
 		will-change: transform;
 
 		@media (min-width: variables.$tablet) {
@@ -188,47 +188,47 @@ onBeforeUnmount(() => {
 	}
 
 	&__video {
+		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		display: block;
 	}
 
 	&__scrim {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(0deg, rgb(10 12 16 / 82%) 0%, rgb(10 12 16 / 0%) 55%);
 		pointer-events: none;
+		background: linear-gradient(0deg, rgb(10 12 16 / 82%) 0%, rgb(10 12 16 / 0%) 55%);
 	}
 
 	&__controls {
 		position: absolute;
-		left: 16px;
 		top: 16px;
+		left: 16px;
 		display: flex;
-		align-items: center;
 		gap: 8px;
+		align-items: center;
 
 		@media (min-width: variables.$desktop) {
-			left: 24px;
 			top: 24px;
+			left: 24px;
 			gap: 12px;
 		}
 	}
 
 	&__control {
-		height: 44px;
-		min-width: 44px;
-		padding: 0 14px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 1px solid variables.$glass-border;
-		border-radius: 100px;
-		background-color: rgb(10 12 16 / 62%);
-		backdrop-filter: variables.$glass-blur;
+		min-width: 44px;
+		height: 44px;
+		padding: 0 14px;
 		color: variables.$color-white;
 		cursor: pointer;
+		background-color: rgb(10 12 16 / 62%);
+		border: 1px solid variables.$glass-border;
+		border-radius: 100px;
+		backdrop-filter: variables.$glass-blur;
 		transition:
 			border-color variables.$transition-duration variables.$transition-bezier,
 			color variables.$transition-duration variables.$transition-bezier;
@@ -238,8 +238,8 @@ onBeforeUnmount(() => {
 		}
 
 		&:hover {
-			border-color: rgb(0 179 60 / 60%);
 			color: variables.$color-accent;
+			border-color: rgb(0 179 60 / 60%);
 		}
 	}
 
@@ -251,22 +251,22 @@ onBeforeUnmount(() => {
 	&__pause {
 		width: 14px;
 		height: 16px;
-		border-left: 4px solid currentcolor;
 		border-right: 4px solid currentcolor;
+		border-left: 4px solid currentcolor;
 	}
 
 	&__cta {
 		position: absolute;
-		left: 16px;
 		right: 16px;
 		bottom: 16px;
+		left: 16px;
 		display: flex;
 		justify-content: flex-start;
 
 		@media (min-width: variables.$desktop) {
-			left: 24px;
 			right: 24px;
 			bottom: 24px;
+			left: 24px;
 		}
 	}
 }

@@ -127,8 +127,8 @@ onUnmounted(() => {
 
 		@media (min-width: variables.$desktop) {
 			grid-template-columns: 1.1fr 1fr;
-			align-items: center;
 			gap: 80px;
+			align-items: center;
 		}
 	}
 
@@ -142,8 +142,8 @@ onUnmounted(() => {
 	}
 
 	&__text-block {
-		margin-bottom: 20px;
 		max-width: 640px;
+		margin-bottom: 20px;
 		color: variables.$color-gray-7;
 
 		&:last-child {
@@ -153,12 +153,12 @@ onUnmounted(() => {
 
 	&__img-wrapper {
 		position: relative;
-		overflow: hidden;
-		border: 1px solid variables.$glass-border;
-		border-radius: 16px;
 
 		// Обрезаем запас, который параллакс уводит за границу.
 		aspect-ratio: 4 / 3;
+		overflow: hidden;
+		border: 1px solid variables.$glass-border;
+		border-radius: 16px;
 	}
 
 	&__img {
@@ -168,23 +168,23 @@ onUnmounted(() => {
 	}
 
 	&__counters {
-		margin-top: 48px;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 24px;
+		margin-top: 48px;
 
 		@media (min-width: variables.$desktop) {
-			margin-top: 96px;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 40px;
+			margin-top: 96px;
 		}
 	}
 
 	&__counter {
-		padding-top: 24px;
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+		padding-top: 24px;
 		border-top: 1px solid variables.$glass-border;
 	}
 

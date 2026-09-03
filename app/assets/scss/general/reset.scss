@@ -63,8 +63,8 @@ a {
 
 button {
 	padding: 0;
-	border: 0;
 	background-color: transparent;
+	border: 0;
 
 	@media (min-width: variables.$desktop) {
 		cursor: pointer;
@@ -76,6 +76,6 @@ input {
 }
 
 textarea {
-	resize: none;
 	overflow-y: auto;
+	resize: none;
 }

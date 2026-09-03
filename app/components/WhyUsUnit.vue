@@ -78,15 +78,15 @@ onUnmounted(() => {
 	// Вертикальная «разметка» на фоне: бесконечно ползёт вниз, transform-only.
 	&__road {
 		position: absolute;
-		left: 50%;
 		top: 0;
+		left: 50%;
+		display: none;
 		width: 2px;
 		height: 100%;
-		display: none;
 		overflow: hidden;
-		transform: translateX(-50%);
-		opacity: 0.25;
 		pointer-events: none;
+		opacity: 0.25;
+		transform: translateX(-50%);
 
 		@media (min-width: variables.$desktop) {
 			display: block;
@@ -95,8 +95,8 @@ onUnmounted(() => {
 
 	&__road-dashes {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		width: 100%;
 		height: 200%;
 		background-image: repeating-linear-gradient(180deg, variables.$color-accent 0 28px, rgb(0 179 60 / 0%) 28px 72px);
@@ -121,14 +121,14 @@ onUnmounted(() => {
 	}
 
 	&__item {
-		padding: 28px 24px;
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		padding: 28px 24px;
 		overflow: hidden;
+		background-color: variables.$glass-bg;
 		border: 1px solid variables.$glass-border;
 		border-radius: 16px;
-		background-color: variables.$glass-bg;
 		backdrop-filter: variables.$glass-blur;
 
 		@media (min-width: variables.$desktop) {
@@ -138,23 +138,23 @@ onUnmounted(() => {
 
 	&__item-index {
 		position: absolute;
-		right: 20px;
 		top: 16px;
+		right: 20px;
 		color: rgb(255 255 255 / 7%);
 	}
 
 	&__item-icon {
-		margin-bottom: 24px;
-		width: 56px;
-		height: 56px;
 		display: flex;
+		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
-		flex-shrink: 0;
+		width: 56px;
+		height: 56px;
+		margin-bottom: 24px;
+		color: variables.$color-accent;
+		background-color: rgb(0 179 60 / 10%);
 		border: 1px solid rgb(0 179 60 / 35%);
 		border-radius: 14px;
-		background-color: rgb(0 179 60 / 10%);
-		color: variables.$color-accent;
 
 		.nuxt-icon {
 			width: 28px;
@@ -164,9 +164,9 @@ onUnmounted(() => {
 
 	&__item-title {
 		margin-bottom: 12px;
-		color: variables.$color-white;
 		font-family: variables.$font;
 		font-weight: 700;
+		color: variables.$color-white;
 	}
 
 	&__item-text {

@@ -67,11 +67,11 @@ onUnmounted(() => {
 		margin-bottom: 32px;
 
 		@media (min-width: variables.$desktop) {
-			margin-bottom: 64px;
 			display: flex;
+			gap: 60px;
 			align-items: flex-end;
 			justify-content: space-between;
-			gap: 60px;
+			margin-bottom: 64px;
 		}
 	}
 

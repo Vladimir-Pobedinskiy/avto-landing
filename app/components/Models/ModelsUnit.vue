@@ -140,11 +140,11 @@ onUnmounted(() => {
 		margin-bottom: 32px;
 
 		@media (min-width: variables.$desktop) {
-			margin-bottom: 56px;
 			display: flex;
+			gap: 60px;
 			align-items: flex-end;
 			justify-content: space-between;
-			gap: 60px;
+			margin-bottom: 56px;
 		}
 	}
 
@@ -169,31 +169,31 @@ onUnmounted(() => {
 	}
 
 	&__button {
-		width: 56px;
-		height: 56px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 1px solid variables.$glass-border;
-		border-radius: 50%;
-		background-color: variables.$glass-bg;
+		width: 56px;
+		height: 56px;
 		color: variables.$color-white;
 		cursor: pointer;
+		background-color: variables.$glass-bg;
+		border: 1px solid variables.$glass-border;
+		border-radius: 50%;
 		transition:
 			border-color variables.$transition-duration variables.$transition-bezier,
 			color variables.$transition-duration variables.$transition-bezier,
 			background-color variables.$transition-duration variables.$transition-bezier;
 
 		&:hover {
-			border-color: rgb(0 179 60 / 60%);
-			background-color: rgb(0 179 60 / 12%);
 			color: variables.$color-accent;
+			background-color: rgb(0 179 60 / 12%);
+			border-color: rgb(0 179 60 / 60%);
 		}
 
 		&.swiper-button-disabled {
-			opacity: 0.35;
-			cursor: default;
 			pointer-events: none;
+			cursor: default;
+			opacity: 0.35;
 		}
 	}
 
@@ -224,9 +224,9 @@ onUnmounted(() => {
 	}
 
 	&__progress {
-		margin-top: 32px;
 		width: 100%;
 		height: 2px;
+		margin-top: 32px;
 		overflow: hidden;
 		background-color: rgb(255 255 255 / 8%);
 
@@ -239,9 +239,9 @@ onUnmounted(() => {
 		display: block;
 		width: 100%;
 		height: 100%;
+		background: linear-gradient(90deg, variables.$color-accent, variables.$color-accent-soft);
 		transform: scaleX(0.14);
 		transform-origin: left;
-		background: linear-gradient(90deg, variables.$color-accent, variables.$color-accent-soft);
 		transition: transform 0.3s variables.$transition-bezier;
 	}
 }

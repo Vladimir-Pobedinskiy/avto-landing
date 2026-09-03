@@ -150,12 +150,12 @@ onUnmounted(() => {
 
 .home-hero {
 	position: relative;
-	min-height: 640px;
+	display: flex;
+	align-items: center;
 
 	// Вычитаем шапку, чтобы первый экран занимал ровно видимую область.
 	height: calc(100svh - 62px);
-	display: flex;
-	align-items: center;
+	min-height: 640px;
 	overflow: hidden;
 	isolation: isolate;
 
@@ -192,18 +192,18 @@ onUnmounted(() => {
 	&__grain {
 		position: absolute;
 		inset: 0;
-		opacity: 0.5;
+		pointer-events: none;
 		background-image: repeating-linear-gradient(0deg, rgb(255 255 255 / 2%) 0 1px, rgb(0 0 0 / 0%) 1px 3px);
 		mix-blend-mode: overlay;
-		pointer-events: none;
+		opacity: 0.5;
 	}
 
 	&__content {
-		padding: 80px 0 100px;
-		max-width: 860px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		max-width: 860px;
+		padding: 80px 0 100px;
 
 		@media (min-width: variables.$desktop) {
 			padding: 60px 0;
@@ -211,15 +211,15 @@ onUnmounted(() => {
 	}
 
 	&__label {
-		margin-bottom: 20px;
 		padding: 8px 16px;
-		border: 1px solid variables.$glass-border;
-		border-radius: 100px;
-		background-color: variables.$glass-bg;
-		backdrop-filter: variables.$glass-blur;
+		margin-bottom: 20px;
 		color: variables.$color-gray-7;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
+		background-color: variables.$glass-bg;
+		border: 1px solid variables.$glass-border;
+		border-radius: 100px;
+		backdrop-filter: variables.$glass-blur;
 	}
 
 	&__title {
@@ -240,8 +240,8 @@ onUnmounted(() => {
 	}
 
 	&__desc {
-		margin-bottom: 36px;
 		max-width: 560px;
+		margin-bottom: 36px;
 		color: variables.$color-gray-7;
 	}
 
@@ -256,10 +256,10 @@ onUnmounted(() => {
 	}
 
 	&__stats {
-		margin-top: 48px;
 		display: grid;
 		grid-template-columns: repeat(3, auto);
 		gap: 20px;
+		margin-top: 48px;
 
 		@media (min-width: variables.$tablet) {
 			gap: 56px;
@@ -284,15 +284,15 @@ onUnmounted(() => {
 
 	&__scroll-hint {
 		position: absolute;
-		left: 50%;
 		bottom: 24px;
-		width: 26px;
-		height: 42px;
+		left: 50%;
 		display: none;
 		justify-content: center;
-		transform: translateX(-50%);
+		width: 26px;
+		height: 42px;
 		border: 1px solid variables.$glass-border;
 		border-radius: 100px;
+		transform: translateX(-50%);
 
 		@media (min-width: variables.$desktop) {
 			display: flex;
@@ -300,11 +300,11 @@ onUnmounted(() => {
 	}
 
 	&__scroll-dot {
-		margin-top: 8px;
 		width: 4px;
 		height: 8px;
-		border-radius: 4px;
+		margin-top: 8px;
 		background-color: variables.$color-accent;
+		border-radius: 4px;
 		animation: scroll-hint 2s ease-in-out infinite;
 	}
 }

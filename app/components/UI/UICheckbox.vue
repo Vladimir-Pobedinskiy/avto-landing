@@ -44,8 +44,8 @@ const modelValue = defineModel<boolean>('modelValue')
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-left: 30px;
 	width: fit-content;
+	padding-left: 30px;
 
 	@media (min-width: variables.$desktop) {
 		cursor: pointer;
@@ -54,35 +54,35 @@ const modelValue = defineModel<boolean>('modelValue')
 	&__checkbox-icon-wrapper {
 		position: absolute;
 		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 18px;
 		min-width: 18px;
 		height: 18px;
 		min-height: 18px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		overflow: hidden;
 		background-color: transparent;
 		border: 1px solid variables.$color-white;
-		overflow: hidden;
 		transition:
 			background-color 0.3s ease,
 			border-color 0.3s ease;
 	}
 
 	&__checkbox-icon {
-		transform: scale(0);
 		width: 12px;
 		height: 12px;
 		color: variables.$color-white;
+		transform: scale(0);
 		transition: transform 0.3s ease;
 	}
 
 	&__checkbox-error {
 		position: absolute;
-		left: 0;
 		top: 102%;
-		margin-top: 4px;
+		left: 0;
 		display: block;
+		margin-top: 4px;
 		color: variables.$color-error;
 	}
 }
@@ -118,9 +118,9 @@ const modelValue = defineModel<boolean>('modelValue')
 	}
 
 	&.disabled {
+		z-index: 10;
 		pointer-events: none;
 		opacity: 0.7;
-		z-index: 10;
 	}
 }
 </style>

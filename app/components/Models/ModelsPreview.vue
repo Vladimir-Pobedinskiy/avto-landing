@@ -64,13 +64,13 @@ const { handleAnchorClick } = useAnchorNav()
 @use '@/assets/scss/general/variables';
 
 .models-preview {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	overflow: hidden;
+	background-color: variables.$glass-bg;
 	border: 1px solid variables.$glass-border;
 	border-radius: 16px;
-	background-color: variables.$glass-bg;
 	backdrop-filter: variables.$glass-blur;
 
 	&__img-wrapper {
@@ -88,31 +88,31 @@ const { handleAnchorClick } = useAnchorNav()
 
 	&__badge {
 		position: absolute;
-		left: 16px;
 		top: 16px;
-		padding: 7px 14px;
+		left: 16px;
 		display: flex;
-		align-items: center;
 		gap: 8px;
-		border: 1px solid variables.$glass-border;
-		border-radius: 100px;
-		background-color: rgb(10 12 16 / 78%);
-		backdrop-filter: variables.$glass-blur;
+		align-items: center;
+		padding: 7px 14px;
 		color: variables.$color-gray-7;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
+		background-color: rgb(10 12 16 / 78%);
+		border: 1px solid variables.$glass-border;
+		border-radius: 100px;
+		backdrop-filter: variables.$glass-blur;
 
 		&.available {
-			border-color: rgb(0 179 60 / 45%);
 			color: variables.$color-white;
+			border-color: rgb(0 179 60 / 45%);
 		}
 	}
 
 	&__badge-dot {
 		width: 7px;
 		height: 7px;
-		border-radius: 50%;
 		background-color: variables.$color-green;
+		border-radius: 50%;
 		animation: pulse-dot 2.4s ease-in-out infinite;
 	}
 
@@ -121,18 +121,18 @@ const { handleAnchorClick } = useAnchorNav()
 		right: 16px;
 		bottom: 16px;
 		padding: 6px 12px;
-		border-radius: 6px;
-		background-color: rgb(0 179 60 / 88%);
 		color: variables.$color-white;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
+		background-color: rgb(0 179 60 / 88%);
+		border-radius: 6px;
 	}
 
 	&__body {
-		padding: 24px 20px;
 		display: flex;
 		flex: 1 1 auto;
 		flex-direction: column;
+		padding: 24px 20px;
 
 		@media (min-width: variables.$desktop) {
 			padding: 28px 24px;
@@ -151,11 +151,11 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__specs {
-		padding: 20px 0;
-		margin-bottom: 24px;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
+		padding: 20px 0;
+		margin-bottom: 24px;
 		border-top: 1px solid variables.$glass-border;
 		border-bottom: 1px solid variables.$glass-border;
 	}
@@ -177,18 +177,18 @@ const { handleAnchorClick } = useAnchorNav()
 	}
 
 	&__footer {
-		margin-top: auto;
 		display: flex;
+		gap: 16px;
 		align-items: flex-end;
 		justify-content: space-between;
-		gap: 16px;
+		margin-top: auto;
 	}
 
 	&__price {
 		margin-bottom: 4px;
-		color: variables.$color-accent;
 		font-family: variables.$font;
 		font-weight: 800;
+		color: variables.$color-accent;
 	}
 
 	&__price-note {

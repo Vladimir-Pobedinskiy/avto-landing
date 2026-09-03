@@ -269,8 +269,8 @@ const onSubmit = async (): Promise<void> => {
 		padding-top: 16px;
 
 		@media (min-width: variables.$desktop) {
-			margin-top: auto;
 			padding-top: 54px;
+			margin-top: auto;
 		}
 	}
 }
@@ -310,14 +310,14 @@ const onSubmit = async (): Promise<void> => {
 	}
 
 	&__bottom {
-		margin-top: 24px;
 		display: grid;
 		grid-template-columns: 100%;
 		gap: 32px;
+		margin-top: 24px;
 
 		@media (min-width: variables.$desktop) {
-			margin-top: 32px;
 			gap: 64px;
+			margin-top: 32px;
 		}
 	}
 
@@ -333,12 +333,12 @@ const onSubmit = async (): Promise<void> => {
 		color: variables.$color-gray-7;
 
 		&::after {
-			content: '';
 			position: absolute;
-			left: 0;
 			top: 96%;
+			left: 0;
 			width: 100%;
 			height: 1px;
+			content: '';
 			background-color: variables.$color-gray-7;
 
 			@media (min-width: variables.$desktop) {
@@ -362,9 +362,9 @@ const onSubmit = async (): Promise<void> => {
 
 		&:disabled,
 		&.disabled {
-			opacity: 0.4;
-			cursor: default;
 			pointer-events: none;
+			cursor: default;
+			opacity: 0.4;
 		}
 	}
 

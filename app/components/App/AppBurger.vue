@@ -99,9 +99,9 @@ $burger-height: 2px;
 	width: 24px;
 	min-width: 24px;
 	height: 18px;
-	border: none;
-	background-color: transparent;
 	color: variables.$color-white;
+	background-color: transparent;
+	border: none;
 
 	&::before,
 	&::after {
@@ -160,43 +160,43 @@ $burger-height: 2px;
 
 .burger-nav {
 	position: fixed;
-	left: 0;
 	top: 97px;
 	bottom: 0;
+	left: 0;
+	z-index: 998;
+	visibility: hidden;
 	width: 100%;
 	height: calc(100vh - 98px);
 	padding-bottom: 145px;
-	opacity: 0;
-	visibility: hidden;
 	overflow-y: auto;
-	background-color: variables.$color-background;
 	color: variables.$color-white;
-	z-index: 998;
+	background-color: variables.$color-background;
+	opacity: 0;
 	transition:
 		opacity 0.4s ease-in-out,
 		visibility 0.4s ease-in-out;
 
 	&.active {
-		opacity: 1;
-		visibility: visible;
 		z-index: 998;
+		visibility: visible;
 		color: variables.$color-white;
+		opacity: 1;
 		transition:
 			opacity 0.4s ease-in-out,
 			visibility 0.4s ease-in-out;
 	}
 
 	&__inner {
-		height: 100%;
-		padding: 24px 16px;
 		display: flex;
 		flex-direction: column;
+		height: 100%;
+		padding: 24px 16px;
 	}
 
 	&__address {
-		margin-bottom: 48px;
 		display: flex;
 		flex-direction: column;
+		margin-bottom: 48px;
 	}
 
 	&__address-label {
@@ -220,14 +220,14 @@ $burger-height: 2px;
 	&__navigation-link-btn {
 		display: flex;
 		align-items: center;
-		text-transform: uppercase;
 		color: variables.$color-white;
+		text-transform: uppercase;
 	}
 
 	&__navigation-link-btn-icon {
-		margin-left: 8px;
 		width: 18px;
 		height: 18px;
+		margin-left: 8px;
 		color: variables.$color-white;
 		transform: translateY(-1px);
 		transition: transform 0.3s ease;
@@ -238,14 +238,14 @@ $burger-height: 2px;
 	}
 
 	&__navigation-link {
-		text-transform: uppercase;
 		color: variables.$color-white;
+		text-transform: uppercase;
 	}
 
 	&__contacts {
-		margin-top: auto;
 		width: fit-content;
 		height: auto;
+		margin-top: auto;
 	}
 }
 </style>

@@ -33,13 +33,13 @@ defineProps<{
 @use '@/assets/scss/general/variables';
 
 .news-preview {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	overflow: hidden;
+	background-color: variables.$glass-bg;
 	border: 1px solid variables.$glass-border;
 	border-radius: 16px;
-	background-color: variables.$glass-bg;
 	backdrop-filter: variables.$glass-blur;
 
 	&__img-wrapper {
@@ -57,22 +57,22 @@ defineProps<{
 
 	&__tag {
 		position: absolute;
-		left: 16px;
 		top: 16px;
+		left: 16px;
 		padding: 6px 12px;
-		border-radius: 6px;
-		background-color: rgb(10 12 16 / 78%);
-		backdrop-filter: variables.$glass-blur;
 		color: variables.$color-accent;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
+		background-color: rgb(10 12 16 / 78%);
+		border-radius: 6px;
+		backdrop-filter: variables.$glass-blur;
 	}
 
 	&__body {
-		padding: 24px 20px;
 		display: flex;
 		flex: 1 1 auto;
 		flex-direction: column;
+		padding: 24px 20px;
 
 		@media (min-width: variables.$desktop) {
 			padding: 28px 24px;
@@ -88,9 +88,9 @@ defineProps<{
 
 	&__title {
 		margin-bottom: 12px;
-		color: variables.$color-white;
 		font-family: variables.$font;
 		font-weight: 700;
+		color: variables.$color-white;
 	}
 
 	&__desc {

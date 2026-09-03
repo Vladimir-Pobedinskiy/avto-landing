@@ -61,7 +61,7 @@ withDefaults(
 }
 
 .marquee {
-	will-change: transform;
 	min-width: fit-content !important;
+	will-change: transform;
 }
 </style>

@@ -36,16 +36,16 @@ const emits = defineEmits<{
 @use '@/assets/scss/general/variables';
 
 .configurator-card {
-	padding: 20px 14px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 8px;
-	border: 1px solid variables.$glass-border;
-	border-radius: 12px;
-	background-color: rgb(255 255 255 / 3%);
+	align-items: center;
+	padding: 20px 14px;
 	color: variables.$color-white;
 	text-align: center;
+	background-color: rgb(255 255 255 / 3%);
+	border: 1px solid variables.$glass-border;
+	border-radius: 12px;
 	transition:
 		border-color variables.$transition-duration variables.$transition-bezier,
 		background-color variables.$transition-duration variables.$transition-bezier,
@@ -74,8 +74,8 @@ const emits = defineEmits<{
 		font-family: variables.$font-secondary;
 		font-size: 12px;
 		font-weight: 600;
-		letter-spacing: 0.06em;
 		text-transform: uppercase;
+		letter-spacing: 0.06em;
 
 		@media (min-width: variables.$desktop) {
 			font-size: 14px;
@@ -87,14 +87,14 @@ const emits = defineEmits<{
 	}
 
 	&__price {
-		margin-top: auto;
 		padding-top: 8px;
+		margin-top: auto;
 		color: variables.$color-gray-7;
 	}
 
 	&.selected {
-		border-color: variables.$color-accent;
 		background-color: rgb(0 179 60 / 8%);
+		border-color: variables.$color-accent;
 
 		.configurator-card__icon {
 			color: variables.$color-accent;

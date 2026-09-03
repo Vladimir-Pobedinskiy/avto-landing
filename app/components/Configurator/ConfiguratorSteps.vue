@@ -82,22 +82,22 @@ const progress = computed<string>(() => {
 	}
 
 	&__btn {
-		padding: 0 0 14px;
-		width: 100%;
 		display: flex;
-		align-items: baseline;
 		gap: 10px;
-		border: 0;
-		background-color: transparent;
+		align-items: baseline;
+		width: 100%;
+		padding: 0 0 14px;
 		color: variables.$color-gray-4;
 		text-align: left;
 		text-transform: uppercase;
+		background-color: transparent;
+		border: 0;
 		transition: color variables.$transition-duration variables.$transition-bezier;
 
 		@media (min-width: variables.$desktop-small) {
 			&:hover {
-				cursor: pointer;
 				color: variables.$color-gray-7;
+				cursor: pointer;
 			}
 		}
 	}
@@ -147,8 +147,8 @@ const progress = computed<string>(() => {
 
 	&__bar {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		height: 100%;
 		background: linear-gradient(90deg, variables.$color-accent, variables.$color-accent-soft);
 		box-shadow: 0 0 12px rgb(0 179 60 / 70%);

@@ -87,11 +87,11 @@ onUnmounted(() => {
 		margin-bottom: 32px;
 
 		@media (min-width: variables.$desktop) {
-			margin-bottom: 64px;
 			display: flex;
+			gap: 60px;
 			align-items: flex-end;
 			justify-content: space-between;
-			gap: 60px;
+			margin-bottom: 64px;
 		}
 	}
 
@@ -121,14 +121,14 @@ onUnmounted(() => {
 	}
 
 	&__card {
-		padding: 28px 24px;
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		padding: 28px 24px;
 		overflow: hidden;
+		background-color: variables.$glass-bg;
 		border: 1px solid variables.$glass-border;
 		border-radius: 16px;
-		background-color: variables.$glass-bg;
 		backdrop-filter: variables.$glass-blur;
 
 		@media (min-width: variables.$desktop) {
@@ -136,41 +136,41 @@ onUnmounted(() => {
 		}
 
 		&.featured {
-			border-color: rgb(0 179 60 / 45%);
 			background-color: rgb(0 179 60 / 7%);
+			border-color: rgb(0 179 60 / 45%);
 		}
 	}
 
 	// Мягкое пятно в углу карточки — статичное, чтобы не жечь GPU в списке.
 	&__card-glow {
 		position: absolute;
-		right: -80px;
 		top: -80px;
+		right: -80px;
 		width: 220px;
 		height: 220px;
-		background: radial-gradient(circle, rgb(0 179 60 / 24%) 0%, rgb(0 179 60 / 0%) 70%);
 		pointer-events: none;
+		background: radial-gradient(circle, rgb(0 179 60 / 24%) 0%, rgb(0 179 60 / 0%) 70%);
 	}
 
 	&__card-head {
-		margin-bottom: 24px;
 		position: relative;
 		display: flex;
+		gap: 16px;
 		align-items: center;
 		justify-content: space-between;
-		gap: 16px;
+		margin-bottom: 24px;
 	}
 
 	&__card-icon {
-		width: 52px;
-		height: 52px;
 		display: flex;
+		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
-		flex-shrink: 0;
+		width: 52px;
+		height: 52px;
+		color: variables.$color-accent;
 		border: 1px solid variables.$glass-border;
 		border-radius: 12px;
-		color: variables.$color-accent;
 
 		.nuxt-icon {
 			width: 26px;
@@ -180,48 +180,48 @@ onUnmounted(() => {
 
 	&__card-note {
 		padding: 6px 12px;
-		border-radius: 100px;
-		background-color: rgb(255 255 255 / 6%);
 		color: variables.$color-gray-7;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
+		background-color: rgb(255 255 255 / 6%);
+		border-radius: 100px;
 	}
 
 	&__card-name {
-		margin-bottom: 12px;
 		position: relative;
+		margin-bottom: 12px;
 		color: variables.$color-white;
 		text-transform: uppercase;
 	}
 
 	&__card-desc {
-		margin-bottom: 24px;
 		position: relative;
+		margin-bottom: 24px;
 		color: variables.$color-gray-7;
 	}
 
 	&__card-options {
-		margin-top: auto;
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		margin-top: auto;
 	}
 
 	&__card-option {
-		padding-left: 22px;
 		position: relative;
+		padding-left: 22px;
 		color: variables.$color-white;
 
 		&::before {
-			content: '';
 			position: absolute;
-			left: 0;
 			top: 8px;
+			left: 0;
 			width: 8px;
 			height: 8px;
-			border-radius: 50%;
+			content: '';
 			background-color: variables.$color-accent;
+			border-radius: 50%;
 			box-shadow: 0 0 10px rgb(0 179 60 / 70%);
 		}
 	}

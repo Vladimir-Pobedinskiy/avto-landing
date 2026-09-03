@@ -79,22 +79,22 @@ const onClick = (event: MouseEvent) => {
 @use '@/assets/scss/general/variables';
 
 .btn {
-	padding: 14px 24px;
 	position: relative;
-	width: fit-content;
 	display: inline-flex;
+	flex-shrink: 0;
+	gap: 12px;
 	align-items: center;
 	justify-content: center;
-	gap: 12px;
+	width: fit-content;
+	padding: 14px 24px;
 	overflow: hidden;
-	flex-shrink: 0;
-	border: 1px solid transparent;
-	border-radius: 8px;
-	background-color: transparent;
 	color: variables.$color-white;
-	outline: transparent;
 	text-align: center;
 	text-transform: uppercase;
+	outline: transparent;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 8px;
 	transition:
 		background-color variables.$transition-duration variables.$transition-bezier,
 		border-color variables.$transition-duration variables.$transition-bezier,
@@ -115,34 +115,34 @@ const onClick = (event: MouseEvent) => {
 	// Блик пробегает по кнопке только на ховере — постоянной анимации нет.
 	&__shine {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		width: 40%;
 		height: 100%;
-		background: linear-gradient(90deg, rgb(255 255 255 / 0%), rgb(255 255 255 / 35%), rgb(255 255 255 / 0%));
-		transform: translate3d(-160%, 0, 0) skewX(-18deg);
 		pointer-events: none;
+		background: linear-gradient(90deg, rgb(255 255 255 / 0%), rgb(255 255 255 / 35%), rgb(255 255 255 / 0%));
 		opacity: 0;
+		transform: translate3d(-160%, 0, 0) skewX(-18deg);
 	}
 
 	&__label {
-		display: block;
 		position: relative;
 		z-index: 1;
+		display: block;
 	}
 
 	&__icon {
 		position: relative;
+		z-index: 1;
 		width: 28px;
 		height: 12px;
-		z-index: 1;
 		color: inherit;
 		transition: transform variables.$transition-duration variables.$transition-bezier;
 	}
 
 	&.primary {
-		background-color: variables.$color-accent;
 		color: variables.$color-white;
+		background-color: variables.$color-accent;
 		box-shadow: 0 10px 30px -12px rgb(0 179 60 / 80%);
 
 		@media (min-width: variables.$desktop-small) {
@@ -165,15 +165,15 @@ const onClick = (event: MouseEvent) => {
 	}
 
 	&.second {
-		border-color: variables.$glass-border;
-		background-color: variables.$glass-bg;
-		backdrop-filter: variables.$glass-blur;
 		color: variables.$color-white;
+		background-color: variables.$glass-bg;
+		border-color: variables.$glass-border;
+		backdrop-filter: variables.$glass-blur;
 
 		@media (min-width: variables.$desktop-small) {
 			&:not(:disabled):hover {
-				border-color: rgb(0 179 60 / 60%);
 				color: variables.$color-accent;
+				border-color: rgb(0 179 60 / 60%);
 				transform: translateY(-2px);
 
 				.btn__icon {
@@ -185,16 +185,16 @@ const onClick = (event: MouseEvent) => {
 
 	&:disabled,
 	&.disabled {
-		cursor: default;
+		color: variables.$color-gray-4;
 		pointer-events: none;
+		cursor: default;
 		background-color: rgb(255 255 255 / 6%);
 		box-shadow: none;
-		color: variables.$color-gray-4;
 	}
 
 	&.small {
-		padding: 12px 20px;
 		gap: 8px;
+		padding: 12px 20px;
 
 		.btn__label {
 			font-size: 14px;

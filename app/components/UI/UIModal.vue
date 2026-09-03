@@ -116,16 +116,16 @@ watch(openedModals, value => {
 @use '@/assets/scss/general/variables';
 
 .vfm.modal-container {
-	padding: 27px 0;
 	position: fixed;
-	left: 0;
 	top: 0;
+	left: 0;
+	z-index: 10000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 10000;
+	padding: 27px 0;
 }
 
 .vfm__content.vfm--outline-none.modal-content {
@@ -138,14 +138,14 @@ watch(openedModals, value => {
 }
 
 .modal-content {
-	padding: 40px 16px;
 	width: 100%;
 	max-width: 600px;
 	max-height: 85%;
-	background-color: variables.$color-background;
-	color: variables.$color-white;
-	box-shadow: 0 3px 4px 0 rgb(0, 0, 0, 15%);
+	padding: 40px 16px;
 	overflow-y: auto;
+	color: variables.$color-white;
+	background-color: variables.$color-background;
+	box-shadow: 0 3px 4px 0 rgb(0, 0, 0, 15%);
 }
 
 .modal-close-btn {
@@ -153,8 +153,8 @@ watch(openedModals, value => {
 	top: 12px;
 	right: 12px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	width: 24px;
 	height: 24px;
 }
@@ -180,12 +180,12 @@ watch(openedModals, value => {
 
 .modal-success {
 	&__body {
-		width: 100%;
-		max-width: 600px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 600px;
 	}
 
 	&__title {

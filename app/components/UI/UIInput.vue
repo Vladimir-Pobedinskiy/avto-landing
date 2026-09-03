@@ -110,16 +110,16 @@ const isHiddenInputTitle = computed(() => {
 	}
 
 	&__input-box {
-		width: 100%;
 		position: relative;
+		width: 100%;
 	}
 
 	&__input {
-		padding: 16px 0;
 		width: 100%;
-		background-color: variables.$color-background;
+		padding: 16px 0;
 		color: variables.$color-gray-7;
 		pointer-events: all;
+		background-color: variables.$color-background;
 		border-bottom: 1px solid variables.$color-accent-stroke;
 		transition:
 			border-color 0.4s ease-in-out,
@@ -136,9 +136,9 @@ const isHiddenInputTitle = computed(() => {
 
 		&:active,
 		&:focus {
+			color: variables.$color-white;
 			outline: transparent;
 			border-color: variables.$color-accent;
-			color: variables.$color-white;
 			transition:
 				border-color 0.4s ease-in-out,
 				color 0.4s ease-in-out;
@@ -147,9 +147,9 @@ const isHiddenInputTitle = computed(() => {
 		&:disabled,
 		&.disabled {
 			color: variables.$color-gray-4;
-			border-color: variables.$color-gray-4;
-			cursor: default;
 			pointer-events: none;
+			cursor: default;
+			border-color: variables.$color-gray-4;
 			transition:
 				border-color 0.4s ease-in-out,
 				color 0.4s ease-in-out;
@@ -169,13 +169,13 @@ const isHiddenInputTitle = computed(() => {
 
 	&__title {
 		position: absolute;
-		left: 0;
 		top: 50%;
-		transform: translateY(-50%);
-		cursor: text;
+		left: 0;
 		font-size: 16px;
 		color: variables.$color-gray-4;
 		pointer-events: none;
+		cursor: text;
+		transform: translateY(-50%);
 
 		&.hidden {
 			height: 0;
@@ -184,8 +184,8 @@ const isHiddenInputTitle = computed(() => {
 	}
 
 	&__error-message {
-		margin-top: 10px;
 		display: block;
+		margin-top: 10px;
 		color: variables.$color-error;
 	}
 }
@@ -195,8 +195,8 @@ const isHiddenInputTitle = computed(() => {
 	background-color: transparent;
 
 	&.disabled {
-		opacity: 0.5;
 		pointer-events: none;
+		opacity: 0.5;
 	}
 }
 
@@ -206,16 +206,16 @@ const isHiddenInputTitle = computed(() => {
 
 // скрываем у input[type="tel"] placeholder в обычном состоянии
 [type='tel']::placeholder {
-	font-size: 0;
 	height: 0;
+	font-size: 0;
 	transition: font-size 0.3s ease;
 }
 
 // убираем стрелки у input[type="number"]
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
-	-webkit-appearance: none;
 	margin: 0;
+	-webkit-appearance: none;
 }
 
 input[type='number'] {
@@ -228,8 +228,8 @@ input[type='number']:focus {
 }
 
 input[type='number']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
 	margin: 0;
+	-webkit-appearance: none;
 }
 
 // password
@@ -242,13 +242,13 @@ input[name='repeatPassword'] {
 
 .toggle-password-visibility-btn {
 	position: absolute;
-	right: 16px;
 	top: 50%;
-	transform: translateY(-50%);
+	right: 16px;
+	z-index: 10;
 	width: 24px;
 	height: 24px;
-	z-index: 10;
 	background-color: transparent;
+	transform: translateY(-50%);
 
 	svg {
 		position: absolute;

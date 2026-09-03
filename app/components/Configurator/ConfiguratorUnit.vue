@@ -299,11 +299,11 @@ onUnmounted(() => {
 		margin-bottom: 32px;
 
 		@media (min-width: variables.$desktop) {
-			margin-bottom: 64px;
 			display: flex;
+			gap: 60px;
 			align-items: flex-end;
 			justify-content: space-between;
-			gap: 60px;
+			margin-bottom: 64px;
 		}
 	}
 
@@ -323,9 +323,9 @@ onUnmounted(() => {
 
 	&__stage {
 		padding: 24px 16px;
+		background-color: variables.$glass-bg;
 		border: 1px solid variables.$glass-border;
 		border-radius: 16px;
-		background-color: variables.$glass-bg;
 		backdrop-filter: variables.$glass-blur;
 
 		@media (min-width: variables.$desktop) {
@@ -356,57 +356,57 @@ onUnmounted(() => {
 
 	&__visual {
 		position: relative;
-		overflow: hidden;
-		border-radius: 12px;
-		background-color: variables.$color-surface;
 		aspect-ratio: 3 / 2;
+		overflow: hidden;
+		background-color: variables.$color-surface;
+		border-radius: 12px;
 	}
 
 	&__img {
+		display: block;
 		width: 100%;
 		height: 100%;
-		display: block;
 		object-fit: cover;
 	}
 
 	&__visual-badge {
 		position: absolute;
-		left: 16px;
 		top: 16px;
+		left: 16px;
 		padding: 6px 12px;
-		border-radius: 100px;
-		background-color: rgb(10 12 16 / 70%);
-		backdrop-filter: blur(6px);
 		color: variables.$color-white;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
+		background-color: rgb(10 12 16 / 70%);
+		border-radius: 100px;
+		backdrop-filter: blur(6px);
 	}
 
 	&__panel {
-		padding: 20px 16px;
 		display: flex;
 		flex-direction: column;
 		gap: 28px;
+		padding: 20px 16px;
+		background-color: rgb(255 255 255 / 3%);
 		border: 1px solid variables.$glass-border;
 		border-radius: 12px;
-		background-color: rgb(255 255 255 / 3%);
 
 		@media (min-width: variables.$desktop) {
-			padding: 32px 28px;
 			gap: 36px;
+			padding: 32px 28px;
 		}
 	}
 
 	&__group-title {
-		margin-bottom: 8px;
 		padding-bottom: 12px;
-		border-bottom: 1px solid variables.$glass-border;
+		margin-bottom: 8px;
 		font-family: variables.$font-secondary;
 		font-size: 13px;
 		font-weight: 600;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
 		color: variables.$color-gray-7;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		border-bottom: 1px solid variables.$glass-border;
 
 		@media (min-width: variables.$desktop) {
 			font-size: 15px;
@@ -430,9 +430,9 @@ onUnmounted(() => {
 
 	&__summary-base {
 		display: flex;
+		gap: 16px;
 		align-items: baseline;
 		justify-content: space-between;
-		gap: 16px;
 		color: variables.$color-white;
 	}
 
@@ -445,9 +445,9 @@ onUnmounted(() => {
 
 	&__summary-item {
 		display: flex;
+		gap: 16px;
 		align-items: baseline;
 		justify-content: space-between;
-		gap: 16px;
 		color: variables.$color-white;
 	}
 
@@ -467,23 +467,23 @@ onUnmounted(() => {
 	}
 
 	&__footer {
-		margin-top: 24px;
-		padding-top: 24px;
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		padding-top: 24px;
+		margin-top: 24px;
 		border-top: 1px solid variables.$glass-border;
 
 		@media (min-width: variables.$tablet) {
 			flex-direction: row;
+			gap: 32px;
 			align-items: flex-end;
 			justify-content: space-between;
-			gap: 32px;
 		}
 
 		@media (min-width: variables.$desktop) {
-			margin-top: 40px;
 			padding-top: 32px;
+			margin-top: 40px;
 		}
 	}
 
@@ -503,8 +503,8 @@ onUnmounted(() => {
 		margin-right: 6px;
 		font-size: 18px;
 		font-weight: 600;
-		text-transform: uppercase;
 		color: variables.$color-gray-7;
+		text-transform: uppercase;
 
 		@media (min-width: variables.$desktop) {
 			font-size: 22px;
