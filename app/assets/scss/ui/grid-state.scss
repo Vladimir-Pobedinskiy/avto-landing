@@ -1,0 +1,60 @@
+@use '../general/variables';
+
+.grid-col-2 {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-rows: max-content;
+	gap: 48px;
+
+	@media (min-width: variables.$mobile-big) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+
+	@media (min-width: variables.$desktop) {
+		gap: 56px 40px;
+	}
+}
+
+.grid-col-3 {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-rows: max-content;
+	gap: 48px;
+
+	@media (min-width: variables.$mobile-big) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+
+	@media (min-width: variables.$tablet-big) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (min-width: variables.$desktop) {
+		gap: 56px 40px;
+	}
+}
+
+.grid-col-6 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px 16px;
+
+	@media (min-width: variables.$mobile-big) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (min-width: variables.$tablet) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@media (min-width: variables.$tablet-big) {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	@media (min-width: variables.$desktop) {
+		grid-template-columns: repeat(6, 1fr);
+		gap: 56px 40px;
+	}
+}

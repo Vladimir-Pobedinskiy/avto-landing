@@ -1,0 +1,134 @@
+@use 'variables';
+
+html,
+body {
+	min-height: 100%;
+	background-color: variables.$color-background;
+	color: variables.$color-white;
+	font-family: variables.$font;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.body-inner {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	background-color: variables.$color-background;
+	color: variables.$color-white;
+
+	@media (min-width: variables.$tablet-big) {
+		min-height: calc(100vh + 1px);
+	}
+
+	&_white {
+		background-color: variables.$color-white;
+		color: variables.$color-black;
+	}
+}
+
+.main {
+	padding-top: 62px;
+	position: relative;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+
+	@media (min-width: variables.$desktop) {
+		padding-top: 99px;
+	}
+}
+
+body.lock {
+	position: fixed;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.lock {
+	position: fixed;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	border: 0;
+	margin: -1px;
+	clip-path: inset(100%);
+	white-space: nowrap;
+}
+
+.container {
+	width: 100%;
+	max-width: variables.$container-width;
+	padding: 0 16px;
+	margin: 0 auto;
+}
+
+.container-secondary {
+	width: 100%;
+	max-width: 628px;
+	padding: 0 16px;
+	margin: 0 auto;
+}
+
+.offset {
+	padding: 40px 0;
+
+	@media (min-width: variables.$desktop) {
+		padding: 100px 0;
+	}
+}
+
+.offset-bottom {
+	padding: 0 0 48px;
+
+	@media (min-width: variables.$desktop) {
+		padding: 0 0 100px;
+	}
+}
+
+.offset-top {
+	padding: 48px 0 0;
+
+	@media (min-width: variables.$desktop) {
+		padding: 100px 0 0;
+	}
+}
+
+.offset-page {
+	padding: 48px 0;
+
+	@media (min-width: variables.$desktop) {
+		padding: 0 0 100px;
+	}
+}
+
+// nuxt-icon
+.nuxt-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		margin-bottom: 0 !important;
+		width: inherit !important;
+		height: inherit !important;
+	}
+}
+
+.ymaps3--open-maps-button {
+	display: none !important;
+}

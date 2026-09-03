@@ -1,0 +1,169 @@
+@use 'variables';
+
+.user-content {
+	h2 {
+		font-family: variables.$font-secondary;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 1.3;
+
+		@media (min-width: variables.$desktop) {
+			font-size: 110px;
+			font-weight: 500;
+		}
+	}
+
+	h3 {
+		font-family: variables.$font-secondary;
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 1.3;
+		text-transform: uppercase;
+		color: variables.$color-accent;
+
+		@media (min-width: variables.$desktop) {
+			font-size: 54px;
+			font-weight: 500;
+		}
+	}
+
+	div,
+	section {
+		margin-bottom: 40px;
+	}
+
+	p {
+		margin-bottom: 8px;
+		font-family: variables.$font-secondary;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.3;
+
+		@media (min-width: variables.$desktop) {
+			font-size: 16px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	strong {
+		display: block;
+		margin-top: 32px;
+		margin-bottom: 16px;
+		font-family: variables.$font-secondary;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.3;
+		text-transform: uppercase;
+		color: variables.$color-accent;
+
+		@media (min-width: variables.$desktop) {
+			margin-top: 40px;
+			font-size: 16px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	span {
+		display: inline-block;
+		margin-bottom: 8px;
+		font-family: variables.$font-secondary;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.5;
+
+		@media (min-width: variables.$desktop) {
+			font-size: 16px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	img {
+		margin: 16px 0;
+	}
+
+	ul,
+	ol {
+		margin-bottom: 8px;
+		font-family: variables.$font-secondary;
+		font-weight: 400;
+		line-height: 1.4;
+		font-size: 16px;
+	}
+
+	ul {
+		margin-bottom: 8px;
+
+		li {
+			position: relative;
+			padding-left: 18px;
+			margin-bottom: 10px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-45%);
+				width: 12px;
+				height: 22px;
+				background-image: url('/img/icon-list.svg');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				flex-shrink: 0;
+				display: inline-block;
+			}
+
+			@media (min-width: variables.$desktop) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	ol {
+		margin-bottom: 8px;
+		list-style: numeric;
+		padding-left: 20px;
+
+		li {
+			margin-bottom: 10px;
+
+			@media (min-width: variables.$desktop) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th,
+	td {
+		padding: 16px 12px;
+		text-align: left;
+		border-bottom: 1px solid variables.$color-black;
+	}
+
+	tr {
+		td {
+			&:first-child {
+				margin-right: 12px;
+
+				@media (min-width: variables.$desktop) {
+					min-width: 268px;
+				}
+			}
+		}
+	}
+}

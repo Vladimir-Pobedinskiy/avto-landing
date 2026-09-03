@@ -1,0 +1,188 @@
+@use 'variables';
+
+.h1,
+.h2,
+.h3 {
+	font-family: variables.$font;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+
+.h1 {
+	font-size: 44px;
+	line-height: 0.95;
+	text-shadow: 0 4px 32px rgb(0 0 0 / 55%);
+}
+
+.h2 {
+	font-size: 36px;
+	line-height: 1;
+}
+
+.h3 {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+@media (min-width: variables.$tablet) {
+	.h1 {
+		font-size: 72px;
+	}
+
+	.h2 {
+		font-size: 56px;
+	}
+
+	.h3 {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: variables.$desktop) {
+	.h1 {
+		font-size: 108px;
+	}
+
+	.h2 {
+		font-size: 84px;
+	}
+
+	.h3 {
+		font-size: 36px;
+	}
+}
+
+.text-s,
+.text-m,
+.text-l,
+.text-xl {
+	font-family: variables.$font-secondary;
+}
+
+.text-s {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 14px;
+	}
+}
+
+.text-m {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 16px;
+	}
+
+	&_medium {
+		font-weight: 500;
+	}
+}
+
+.text-l {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.4;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 18px;
+	}
+
+	&_semibold {
+		font-weight: 600;
+	}
+}
+
+.text-xl {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.35;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 28px;
+	}
+}
+
+.numeric-m {
+	font-family: variables.$font;
+	font-size: 32px;
+	font-weight: 800;
+	line-height: 1;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 40px;
+	}
+}
+
+.numeric-l {
+	font-family: variables.$font;
+	font-size: 40px;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.03em;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 72px;
+	}
+}
+
+.button-typo {
+	font-family: variables.$font-secondary;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: 0.02em;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 16px;
+	}
+}
+
+.input-typo {
+	font-family: variables.$font-secondary;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+// Крупная «обводочная» цифра для декоративных счётчиков секций.
+.display-typo {
+	font-family: variables.$font;
+	font-size: 88px;
+	font-weight: 800;
+	line-height: 1;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: variables.$color-accent;
+	color: transparent;
+	text-align: center;
+	z-index: 3;
+
+	@media (min-width: variables.$desktop) {
+		font-size: 160px;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	color: variables.$color-white;
+
+	&_margin {
+		margin-bottom: 32px;
+
+		@media (min-width: variables.$desktop) {
+			margin-bottom: 80px;
+		}
+	}
+}
+
+// Акцентная часть заголовка — градиентная заливка по кромке «кузова».
+.accent-text {
+	background: linear-gradient(100deg, variables.$color-accent 0%, variables.$color-accent-soft 60%, #c9ffdb 100%);
+	background-clip: text;
+	color: transparent;
+}

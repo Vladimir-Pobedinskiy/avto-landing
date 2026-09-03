@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" role="img" aria-label="Новость">
+<defs>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141a24"/><stop offset="1" stop-color="#07090d"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a7dff" stop-opacity=".8"/><stop offset="1" stop-color="#4a7dff" stop-opacity=".05"/></linearGradient>
+</defs>
+<rect width="800" height="520" fill="url(#b)"/>
+<path d="M0 340c120-40 190 30 300 10s180-90 300-60 200 20 200 20v210H0V340Z" fill="url(#r)" opacity=".55"/>
+<path d="M0 400c140-30 210 40 320 18s170-70 280-46 200 28 200 28v120H0V400Z" fill="#4a7dff" opacity=".18"/>
+<circle cx="640" cy="120" r="54" fill="#4a7dff" opacity=".35"/>
+</svg>
