@@ -69,12 +69,10 @@ jobs:
       - name: Generate static site
         run: npm run generate
 
-      # enablement включает Pages на первом запуске, если в настройках репозитория
-      # источник ещё не переключён на GitHub Actions
+      # Источник Pages должен быть переключён на GitHub Actions
+      # в настройках репозитория: Settings → Pages → Source
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
