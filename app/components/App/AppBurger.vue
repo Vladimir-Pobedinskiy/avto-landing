@@ -40,6 +40,9 @@ watch(
 		immediate: true,
 	}
 )
+
+// Ссылки-якоря из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -66,7 +69,7 @@ watch(
 						<li v-for="(link, i) in navigation" :key="i" class="burger-nav__navigation-item">
 							<a
 								class="burger-nav__navigation-link text-m text-m_medium"
-								:href="link.url"
+								:href="assetUrl(link.url)"
 								@click="handleAnchorClick(link.url, $event)"
 							>
 								{{ link.label }}

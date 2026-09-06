@@ -4,6 +4,9 @@ import type { INewsPreview } from '~~/interfaces/news/INewsPreview'
 defineProps<{
 	preview: INewsPreview
 }>()
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -11,7 +14,7 @@ defineProps<{
 		<div class="news-preview__img-wrapper hover-scale-img-wrapper">
 			<img
 				class="news-preview__img hover-scale-img"
-				:src="preview.img.url"
+				:src="assetUrl(preview.img.url)"
 				:alt="preview.img.alt"
 				width="800"
 				height="520"

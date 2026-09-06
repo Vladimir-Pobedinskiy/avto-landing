@@ -67,13 +67,15 @@ const clearForm = () => {
 	form.agree = false
 }
 
+const { submitForm } = useFormSubmit()
+
 const isLoading = ref<boolean>(false)
 const onSubmit = async (): Promise<void> => {
 	try {
 		isLoading.value = true
-		await $fetch('/api/application/', {
-			method: 'POST',
-			body: {
+		await submitForm(
+			'/api/application/',
+			{
 				key: props.formKey,
 				tel: form.tel,
 				name: form.name,
@@ -81,7 +83,8 @@ const onSubmit = async (): Promise<void> => {
 				comment: props.formKey === 'select-atv' || props.formKey === 'organizations' ? form.comment : null,
 				agree: form.agree,
 			},
-		})
+			{ success: true }
+		)
 		clearForm()
 		await formRef.value.resetForm()
 		handleApplicationSuccessModal(true)

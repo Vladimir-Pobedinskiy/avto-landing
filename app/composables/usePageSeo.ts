@@ -10,13 +10,16 @@ interface SeoData {
 export const usePageSeo = (data: Ref<SeoData | null | undefined>) => {
 	const route = useRoute()
 	const config = useRuntimeConfig()
+	/* Канонический адрес считается от SITE_URL, а не от адреса json-server:
+	   в canonical должен идти адрес сайта, а не источника данных */
+	const siteUrl = String(config.public.siteUrl || '').replace(/\/$/, '')
+	const absoluteUrl = (path: string) => (path.startsWith('http') ? path : `${siteUrl}${path}`)
 
 	if (data.value && data.value.seo) {
-		const canonicalComputed = computed(() => {
-			return data.value?.seo?.canonical
-				? { rel: 'canonical', href: data.value.seo.canonical }
-				: { rel: 'canonical', href: `${config.public.baseUrl}${route.path}` }
-		})
+		const canonicalComputed = computed(() => ({
+			rel: 'canonical',
+			href: absoluteUrl(data.value?.seo?.canonical || route.path),
+		}))
 		useHead({
 			title: `${data.value.seo?.title}`,
 			link: [canonicalComputed.value],

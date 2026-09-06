@@ -71,6 +71,9 @@ onUnmounted(() => {
 	ctx?.revert()
 	ctx = null
 })
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -90,7 +93,7 @@ onUnmounted(() => {
 						<img
 							ref="imgRef"
 							class="home-about__img"
-							:src="aboutUnit.img.url"
+							:src="assetUrl(aboutUnit.img.url)"
 							:alt="aboutUnit.img.alt"
 							width="960"
 							height="640"

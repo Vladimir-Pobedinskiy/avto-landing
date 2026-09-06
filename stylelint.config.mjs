@@ -1,4 +1,6 @@
 export default {
+	// Сборки и зависимости линтеру не нужны: в .output лежит уже собранный CSS
+	ignoreFiles: ['dist/**', '.output/**', '.nuxt/**', 'node_modules/**'],
 	extends: [
 		'stylelint-config-standard',
 		'stylelint-config-standard-scss',

@@ -138,6 +138,9 @@ onUnmounted(() => {
 	ctx?.revert()
 	ctx = null
 })
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -162,7 +165,7 @@ onUnmounted(() => {
 						<img
 							v-if="selectedModel"
 							class="configurator__img"
-							:src="selectedModel.img.url"
+							:src="assetUrl(selectedModel.img.url)"
 							:alt="selectedModel.img.alt"
 							width="960"
 							height="640"

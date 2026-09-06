@@ -1,5 +1,16 @@
 import { checker } from 'vite-plugin-checker'
 
+/* Адрес лендинга. Когда проект живёт в подпапке домена (GitHub Pages),
+   модулю schema.org нужен origin: базовый префикс он подставляет в путь сам,
+   и полный адрес дал бы его дважды.
+   usePageSeo работает с полным адресом из runtimeConfig.public.siteUrl. */
+const siteUrl = process.env.SITE_URL || ''
+const siteOrigin = siteUrl ? new URL(siteUrl).origin : undefined
+
+/* Базовый путь лендинга: '/' в обычной сборке, '/avto-landing/' на GitHub Pages */
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
+const withBase = (route: string) => (baseURL === '/' ? route : `${baseURL.replace(/\/$/, '')}${route}`)
+
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 	typescript: {
@@ -43,7 +54,8 @@ export default defineNuxtConfig({
 					rel: 'stylesheet',
 					href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap',
 				},
-				{ rel: 'icon', type: 'image/svg+xml', href: '/favicon/favicon.svg' },
+				// Путь к файлу в public/: в подпапке домена ему нужен базовый префикс
+				{ rel: 'icon', type: 'image/svg+xml', href: withBase('/favicon/favicon.svg') },
 			],
 		},
 	},
@@ -57,6 +69,13 @@ export default defineNuxtConfig({
 		'@formkit/auto-animate/nuxt',
 		'floating-vue/nuxt',
 	],
+	site: {
+		url: siteOrigin,
+		name: 'Тайга Моторс',
+		description: 'Вездеходы на шинах сверхнизкого давления: болотоходы и амфибии 6х6 и 8х8 от производителя',
+		defaultLocale: 'ru',
+		trailingSlash: true,
+	},
 	piniaPluginPersistedstate: {
 		storage: 'localStorage',
 		cookieOptions: {
@@ -70,18 +89,25 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['~/assets/css/main.css', '~/assets/scss/main.scss', 'vue-final-modal/style.css'],
+	/* Линтер на лету нужен только в разработке. В продакшн-сборке он лишний:
+	   в CI линт вынесен отдельным шагом до сборки. Заодно из сборки уходит
+	   vite-plugin-checker со своими зависимостями */
+	$development: {
+		vite: {
+			plugins: [
+				checker({
+					eslint: {
+						useFlatConfig: true,
+						lintCommand: 'eslint "./**/*.{ts,js,vue}"',
+					},
+					stylelint: {
+						lintCommand: 'stylelint "**/*.{vue,css,scss}"',
+					},
+				}),
+			],
+		},
+	},
 	vite: {
-		plugins: [
-			checker({
-				eslint: {
-					useFlatConfig: true,
-					lintCommand: 'eslint "./**/*.{ts,js,vue}"',
-				},
-				stylelint: {
-					lintCommand: 'stylelint "**/*.{vue,css,scss}"',
-				},
-			}),
-		],
 		optimizeDeps: {
 			include: [
 				'glightbox',
@@ -103,6 +129,10 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			baseUrl: process.env.BASE_URL,
+			// Канонический адрес сайта: canonical и Open Graph
+			siteUrl: process.env.SITE_URL,
+			// Лендинг без бэкенда (GitHub Pages): формы показывают успех, не уходя в /api/
+			staticDemo: process.env.STATIC_DEMO === 'true',
 		},
 	},
 })

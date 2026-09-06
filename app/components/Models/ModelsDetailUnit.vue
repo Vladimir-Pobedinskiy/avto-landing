@@ -41,6 +41,9 @@ onUnmounted(() => {
 	ctx?.revert()
 	ctx = null
 })
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -96,13 +99,13 @@ onUnmounted(() => {
 				<a
 					v-for="(photo, i) in modelDetail.gallery"
 					:key="i"
-					:href="photo.url"
+					:href="assetUrl(photo.url)"
 					class="model-detail__gallery-item glightbox"
 					:data-title="photo.alt"
 				>
 					<img
 						class="model-detail__gallery-img"
-						:src="photo.url"
+						:src="assetUrl(photo.url)"
 						:alt="photo.alt"
 						width="480"
 						height="320"
@@ -114,7 +117,7 @@ onUnmounted(() => {
 
 			<UIButton
 				as="a"
-				:href="modelDetail.link.url"
+				:href="assetUrl(modelDetail.link.url)"
 				variant="primary"
 				size="big"
 				:label="modelDetail.link.label"

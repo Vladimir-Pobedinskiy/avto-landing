@@ -56,7 +56,7 @@
 				},
 				{ "name": "robots", "content": "index, follow" }
 			],
-			"canonical": "https://vezdehod-t.ru/"
+			"canonical": "/"
 		},
 		"schemaOrg": [],
 		"homeHero": {

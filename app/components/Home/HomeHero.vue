@@ -75,6 +75,9 @@ onUnmounted(() => {
 	ctx?.revert()
 	ctx = null
 })
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -83,14 +86,14 @@ onUnmounted(() => {
 			<video
 				ref="videoRef"
 				class="home-hero__video"
-				:poster="homeHero.video.poster"
+				:poster="assetUrl(homeHero.video.poster)"
 				muted
 				loop
 				playsinline
 				autoplay
 				preload="metadata"
 			>
-				<source :src="homeHero.video.url" type="video/mp4" />
+				<source :src="assetUrl(homeHero.video.url)" type="video/mp4" />
 			</video>
 			<span class="home-hero__scrim" />
 			<span class="home-hero__grain" />
@@ -114,7 +117,7 @@ onUnmounted(() => {
 				<div class="home-hero__actions">
 					<UIButton
 						as="a"
-						:href="homeHero.link.url"
+						:href="assetUrl(homeHero.link.url)"
 						variant="primary"
 						size="big"
 						:label="homeHero.link.label"
@@ -122,7 +125,7 @@ onUnmounted(() => {
 					/>
 					<UIButton
 						as="a"
-						:href="homeHero.secondLink.url"
+						:href="assetUrl(homeHero.secondLink.url)"
 						variant="second"
 						size="big"
 						:label="homeHero.secondLink.label"

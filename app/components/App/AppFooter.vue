@@ -6,6 +6,9 @@ const footer = computed(() => storeGeneral.footer)
 const socials = computed(() => storeGeneral.socials)
 
 const { handleAnchorClick } = useAnchorNav()
+
+// Ссылки-якоря из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -25,7 +28,7 @@ const { handleAnchorClick } = useAnchorNav()
 					<div v-for="(item, i) in footer.navigationMain" :key="i" class="footer__nav-item">
 						<a
 							v-if="item.url.startsWith('/#')"
-							:href="item.url"
+							:href="assetUrl(item.url)"
 							class="footer__nav-link text-m hover-link"
 							@click="handleAnchorClick(item.url, $event)"
 						>
@@ -42,7 +45,7 @@ const { handleAnchorClick } = useAnchorNav()
 					<div v-for="(item, i) in footer.navigationCompany" :key="i" class="footer__nav-item">
 						<a
 							v-if="item.url.startsWith('/#')"
-							:href="item.url"
+							:href="assetUrl(item.url)"
 							class="footer__nav-link text-m hover-link"
 							@click="handleAnchorClick(item.url, $event)"
 						>

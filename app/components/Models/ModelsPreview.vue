@@ -6,6 +6,9 @@ defineProps<{
 }>()
 
 const { handleAnchorClick } = useAnchorNav()
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -13,7 +16,7 @@ const { handleAnchorClick } = useAnchorNav()
 		<div class="models-preview__img-wrapper hover-scale-img-wrapper">
 			<img
 				class="models-preview__img hover-scale-img"
-				:src="preview.img.url"
+				:src="assetUrl(preview.img.url)"
 				:alt="preview.img.alt"
 				width="960"
 				height="640"
@@ -48,7 +51,7 @@ const { handleAnchorClick } = useAnchorNav()
 
 				<UIButton
 					as="a"
-					href="/#test-drive-js"
+					:href="assetUrl('/#test-drive-js')"
 					variant="second"
 					size="small"
 					label="Запросить"

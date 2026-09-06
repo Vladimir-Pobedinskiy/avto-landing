@@ -14,6 +14,9 @@ withDefaults(
 )
 
 const { handleAnchorClick } = useAnchorNav()
+
+// Ссылки-якоря из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -28,7 +31,7 @@ const { handleAnchorClick } = useAnchorNav()
 				<template v-else>
 					<a
 						class="app-nav__link text-m text-m_medium hover-link"
-						:href="link.url"
+						:href="assetUrl(link.url)"
 						@click="handleAnchorClick(link.url, $event)"
 					>
 						{{ link.label }}

@@ -4,6 +4,9 @@
 export const useAnchorNav = () => {
 	const router = useRouter()
 	const route = useRoute()
+	// Адрес в строке браузера пишем сами, поэтому базовый префикс подставляем тоже сами:
+	// router.push его добавляет, history.replaceState — нет
+	const { assetUrl } = useAssetUrl()
 	const { $scrollToAnchor } = useNuxtApp() as unknown as {
 		$scrollToAnchor?: (id: string) => void
 	}
@@ -18,7 +21,7 @@ export const useAnchorNav = () => {
 		if (route.path !== '/') {
 			await router.push(`/#${id}`)
 		} else {
-			window.history.replaceState(null, '', `/#${id}`)
+			window.history.replaceState(null, '', assetUrl(`/#${id}`))
 			$scrollToAnchor?.(id)
 		}
 	}

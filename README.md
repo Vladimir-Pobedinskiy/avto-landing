@@ -15,14 +15,40 @@ npm run double     # Nuxt :3000 + json-server :3001
 Контент лежит в `db.json`, отдаётся через json-server; хендлеры Nuxt в `server/api/**`
 проксируют запросы на `BASE_URL` из `.env`.
 
+## Деплой на GitHub Pages
+
+Лендинг опубликован на <https://vladimir-pobedinskiy.github.io/avto-landing/>
+
+Публикует `.github/workflows/deploy.yml`: пуш в `main` поднимает json-server,
+собирает статику через `npm run generate` и выкладывает `.output/public` на Pages.
+Бэкенда там нет, поэтому данные из `db.json` запекаются в HTML на этапе сборки,
+а формы в режиме `STATIC_DEMO` показывают успех, не уходя в `/api/`.
+
+Источник страниц в Settings → Pages должен быть **GitHub Actions**; первый запуск
+воркфлоу переключает это сам.
+
+## Переменные окружения
+
+См. `.env.example`:
+
+| Переменная          | Назначение                                                    |
+| ------------------- | ------------------------------------------------------------- |
+| `BASE_URL`          | адрес источника данных (json-server), `http://localhost:3001` |
+| `SITE_URL`          | канонический адрес сайта: `canonical` и Open Graph            |
+| `NUXT_APP_BASE_URL` | префикс подпапки домена для GitHub Pages, `/avto-landing/`    |
+| `STATIC_DEMO`       | `true` — лендинг без бэкенда, формы не ходят в `/api/`        |
+
+`SITE_URL` на проде обязательно заменить на боевой домен: от него считается
+`<link rel="canonical">`.
+
 ## Скрипты
 
-| Команда              | Что делает                                   |
-|----------------------|----------------------------------------------|
-| `npm run double`     | фронт и данные одновременно                  |
-| `npm run build`      | прод-сборка                                  |
-| `npm run lint`       | ESLint + Stylelint                           |
-| `npm run format:fix` | Prettier по всему проекту                    |
+| Команда              | Что делает                  |
+| -------------------- | --------------------------- |
+| `npm run double`     | фронт и данные одновременно |
+| `npm run build`      | прод-сборка                 |
+| `npm run lint`       | ESLint + Stylelint          |
+| `npm run format:fix` | Prettier по всему проекту   |
 
 ## Структура секций (`app/pages/index.vue`)
 

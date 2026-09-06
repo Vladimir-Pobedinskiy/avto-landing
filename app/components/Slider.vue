@@ -72,6 +72,9 @@ onUnmounted(() => {
 	swiper.value?.destroy()
 	swiper.value = null
 })
+
+// Пути к файлам из db.json: в подпапке домена им нужен базовый префикс
+const { assetUrl } = useAssetUrl()
 </script>
 
 <template>
@@ -82,7 +85,7 @@ onUnmounted(() => {
 					<div class="slider__inner swiper-wrapper">
 						<div v-for="(item, index) in slider" :key="index" class="slider__slide swiper-slide">
 							<div class="slider__slide-img-wrapper">
-								<img :src="item.url" :alt="item.alt" class="slider__slide-img" />
+								<img :src="assetUrl(item.url)" :alt="item.alt" class="slider__slide-img" />
 							</div>
 						</div>
 					</div>
